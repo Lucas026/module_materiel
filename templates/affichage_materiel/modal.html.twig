@@ -1,0 +1,32 @@
+<!--Modal Information-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">                         
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Information du Produit</h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <thead>
+                            <th>Nom</th>
+                            <th>Prix (€)</th>
+                            <th>Quantité</th>
+                            <th>Date de création</th>
+                        </thead>    
+                        <tbody>
+                            <tr>               
+                                <td>{{ materiel.nomMateriel }}</td>
+                                <td>{{ materiel.prixMateriel }}</td>
+                                <td>{{ materiel.quantiteMateriel }}</td>
+                                <td>{{ materiel.dateCreationMateriel|date('d-m-Y') }}</td>  
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>

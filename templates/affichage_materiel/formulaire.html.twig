@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formMateriel 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}
+    Modification
+{% endblock %}
+
+{% block body %}
+    
+    {{ form_start(formMateriel) }}
+
+    {{ form_row(formMateriel.Nom_Materiel, {'attr': {'placeholder': "Nom matériel"}}) }}
+    {{ form_row(formMateriel.Prix_Materiel, {'attr': {'placeholder': "Prix matériel"}}) }}
+    {{ form_row(formMateriel.Quantite_Materiel, {'attr': {'placeholder': "Quantité matériel"}}) }}
+
+    <button type="submit" class="btn btn-success" >Enregistrer</button>
+
+    {{ form_end(formMateriel) }}
+
+{% endblock %}

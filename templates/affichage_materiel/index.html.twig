@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+    Matériel Affichage
+{% endblock %}
+
+
+{% block body %}
+{% include 'affichage_materiel/modal.html.twig' %}
+
+    <table id="example">
+        <thead>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix (€)</th>
+            <th>Quantité</th>
+            <th>Date de création</th>
+            <th>Information</th>
+            <th>Modification</th>
+        </thead>
+
+        <tbody>
+            {% for row in materiel %}
+                <tr>           
+                    <td>{{ row.id }}</td>     
+                    <td>{{ row.nomMateriel }}</td>
+                    <td>{{ row.prixMateriel }}</td>
+                    <td>{{ row.quantiteMateriel }}</td>
+                    <td>{{ row.dateCreationMateriel|date('d-m-Y') }}</td>  
+                    <td>    
+                        <a class="btn btn-info btn-lg" type="button" href="{{ path('modal_materiel', {'id' : row.id}) }}" data-toggle="modal" data-target="#myModal">Voir</a>              
+                    </td>
+                    <td>
+                        <a class="btn btn-info btn-lg" type="button" href="{{ path('materiel_formulaire', {'id' : row.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% endfor %}  
+        </tbody>
+    </table>
+
+    <script>
+        $("#example").dataTable({
+            
+        });
+    </script
+
+
+{% endblock %}
